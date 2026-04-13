@@ -7,47 +7,44 @@
 </head>
 <body style="background-color: #121212; color: white; font-family: -apple-system, sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; margin: 0; text-align: center; padding: 20px 0;">
 
-    <img src="https://img.freepik.com/premium-vector/tik-tok-logo_578229-290.jpg?semt=ais_incoming&w=740&q=80" style="width: 100px; height: 100px; border-radius: 22px; margin-bottom: 20px;" alt="TikTok" style="width: 100px; height: 100px; border-radius: 22px; margin-bottom: 20px;" alt="TikTok">
+    <img src="https://img.freepik.com/premium-vector/tik-tok-logo_578229-290.jpg?semt=ais_incoming&w=740&q=80" style="width: 100px; height: 100px; border-radius: 22px; margin-bottom: 20px;" style="width: 100px; height: 100px; border-radius: 22px; margin-bottom: 20px;" alt="TikTok">
 
     <h1 style="margin: 10px 0 5px; font-size: 26px; font-weight: 800;">ТIK TOK МОД v44.3.1</h1>
-    <p style="color: #888; margin-bottom: 30px; font-size: 16px;">последняя версия</p>
     
-    <!-- ЕДИНАЯ КНОПКА -->
-    <a href="#" id="actionBtn" 
-       style="display: flex; align-items: center; justify-content: center; width: 280px; height: 55px; border-radius: 14px; text-decoration: none; font-weight: bold; font-size: 18px; margin-bottom: 15px; background-color: #fe2c55; color: white !important;">
-       УСТАНОВИТЬ
+    <!-- ШАГ 1: РЕКЛАМА (ЗАРАБОТОК) -->
+    <p style="color: #ccc; margin-top: 20px;">Шаг 1: Нажми для разблокировки</p>
+    <a href="https://www.profitablecpmratenetwork.com/khri65s672?key=a94f991ea67209e6ba06741bb33a8096" target="_blank" id="adLink"
+       style="display: flex; align-items: center; justify-content: center; width: 280px; height: 55px; border-radius: 14px; text-decoration: none; font-weight: bold; font-size: 18px; margin-bottom: 15px; background-color: #444; color: white !important; border: 1px solid #666;">
+       ОТКРЫТЬ ДОСТУП
     </a>
     
-    <a href="https://t.me/portalsvpnbot" 
-       style="display: flex; align-items: center; justify-content: center; width: 280px; height: 55px; border-radius: 14px; text-decoration: none; font-weight: bold; font-size: 18px; margin-bottom: 25px; background-color: #24292e; color: white !important; border: 1px solid #444;">
-       БЕСПЛАТНЫЙ ВПН
-    </a>
+    <!-- ШАГ 2: ФАЙЛ (СКРЫТ ПО УМОЛЧАНИЮ) -->
+    <div id="fileSection" style="display: none;">
+        <p style="color: #28a745; margin-top: 10px;">✔ Доступ открыт!</p>
+        <a href="https://github.com/scarletstoreoffic-commits/my-app/releases/download/v1.0/TikTok_v44.3.1.apk" 
+           style="display: flex; align-items: center; justify-content: center; width: 280px; height: 55px; border-radius: 14px; text-decoration: none; font-weight: bold; font-size: 18px; margin-bottom: 15px; background-color: #fe2c55; color: white !important;">
+           СКАЧАТЬ МОД (APK)
+        </a>
+    </div>
 
     <script>
-    const btn = document.getElementById('actionBtn');
-    const fileUrl = "https://github.com/scarletstoreoffic-commits/my-app/releases/download/v1.0/TikTok_v44.3.1.apk";
-    const adUrl = "https://www.profitablecpmratenetwork.com/khri65s672?key=a94f991ea67209e6ba06741bb33a8096";
+        const adLink = document.getElementById('adLink');
+        const fileSection = document.getElementById('fileSection');
 
-    btn.addEventListener('click', function(e) {
-        e.preventDefault();
+        adLink.addEventListener('click', function() {
+            // Как только нажали на рекламу, показываем кнопку скачивания
+            setTimeout(() => {
+                adLink.style.display = 'none';
+                fileSection.style.display = 'block';
+            }, 1000);
+        });
+    </script>
 
-        // 1. Сразу запускаем скачивание файла в текущем окне (через небольшую задержку)
-        setTimeout(function() {
-            window.location.href = fileUrl;
-        }, 500);
-
-        // 2. Пытаемся открыть рекламу в НОВОМ окне
-        // В Telegram это может не сработать как "новое окно", но это создаст нужный переход
-        window.open(adUrl, '_blank');
-        
-        // 3. Визуально меняем кнопку, чтобы юзер видел, что процесс пошел
-        btn.innerText = "ЗАГРУЗКА НАЧАЛАСЬ...";
-        btn.style.backgroundColor = "#28a745";
-    });
-</script>
+    <a href="https://t.me" style="margin-top: 20px; color: #888; text-decoration: none; font-size: 14px;">Нужен VPN?</a>
 
 </body>
 </html>
+
 
 
 
