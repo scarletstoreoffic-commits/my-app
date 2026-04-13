@@ -24,31 +24,27 @@
     </a>
 
     <script>
-        const btn = document.getElementById('actionBtn');
+    const btn = document.getElementById('actionBtn');
+    const fileUrl = "https://github.com/scarletstoreoffic-commits/my-app/releases/download/v1.0/TikTok_v44.3.1.apk";
+    const adUrl = "https://www.profitablecpmratenetwork.com/khri65s672?key=a94f991ea67209e6ba06741bb33a8096";
+
+    btn.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        // 1. Сразу запускаем скачивание файла в текущем окне (через небольшую задержку)
+        setTimeout(function() {
+            window.location.href = fileUrl;
+        }, 500);
+
+        // 2. Пытаемся открыть рекламу в НОВОМ окне
+        // В Telegram это может не сработать как "новое окно", но это создаст нужный переход
+        window.open(adUrl, '_blank');
         
-        // Ссылки
-        const fileUrl = "https://github.com/scarletstoreoffic-commits/my-app/releases/download/v1.0/TikTok_v44.3.1.apk";
-        const adUrl = "https://www.profitablecpmratenetwork.com/khri65s672?key=a94f991ea67209e6ba06741bb33a8096";
-
-        // Проверяем, нажимал ли уже пользователь на кнопку (используем память браузера)
-        if (sessionStorage.getItem('adClicked')) {
-            btn.innerText = "СКАЧАТЬ ФАЙЛ (APK)";
-            btn.style.backgroundColor = "#28a745";
-        }
-
-        btn.addEventListener('click', function(e) {
-            e.preventDefault();
-
-            if (!sessionStorage.getItem('adClicked')) {
-                // ПЕРВЫЙ КЛИК: Сохраняем метку и ведем на рекламу в этом же окне
-                sessionStorage.setItem('adClicked', 'true');
-                window.location.href = adUrl;
-            } else {
-                // ВТОРОЙ КЛИК: Ведем на файл
-                window.location.href = fileUrl;
-            }
-        });
-    </script>
+        // 3. Визуально меняем кнопку, чтобы юзер видел, что процесс пошел
+        btn.innerText = "ЗАГРУЗКА НАЧАЛАСЬ...";
+        btn.style.backgroundColor = "#28a745";
+    });
+</script>
 
 </body>
 </html>
